@@ -1,0 +1,30 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}a{color:inherit;text-decoration:none}body{font-family:"Zen Kaku Gothic New",sans-serif;overflow-x:hidden}
+.demo{background:#16302a;color:#dfe7df;font-size:14px;text-align:center;padding:6px}
+.shine{position:relative;overflow:hidden}.shine:before{content:"";position:absolute;top:-20%;left:-60%;width:40%;height:140%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-22deg);animation:sh 5.5s ease-in-out infinite}@keyframes sh{0%,62%{left:-60%}100%{left:140%}}
+.up{opacity:0;transform:translateY(26px);animation:up 1.8s cubic-bezier(.22,.61,.36,1) forwards}@keyframes up{to{opacity:1;transform:none}}
+.d1{animation-delay:.4s}.d2{animation-delay:.9s}.d3{animation-delay:1.4s}.d4{animation-delay:1.9s}.d5{animation-delay:2.4s}
+</style><style>
+body{background:#fff;color:#1f2d3d}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 48px}
+.logo{font-family:"Zen Maru Gothic";font-weight:700;font-size:26px;color:#1d5c7a;letter-spacing:.1em}.logo small{display:block;font-size:12px;letter-spacing:.3em;color:#7aa8bd}
+.tel{font-family:"Oswald";font-size:30px;color:#1d5c7a;text-align:right;line-height:1.1}.tel small{display:block;font-family:"Zen Kaku Gothic New";font-size:13px;color:#5d7380}
+.h{position:relative;height:calc(100vh - 120px);min-height:560px;overflow:hidden;display:grid;grid-template-columns:1fr 1.05fr;align-items:center;align-content:center}
+.txt{padding-left:48px;position:relative;z-index:2}
+.badge{display:inline-block;background:#e6f2f7;color:#1d5c7a;border-radius:999px;padding:6px 20px;font-size:16px;font-weight:700}
+h1{margin:22px 0 20px;font-weight:900;font-size:clamp(44px,4.8vw,72px);line-height:1.35;letter-spacing:.04em;color:#1f2d3d}
+h1 b{color:#1d8fb8}
+.lead{font-size:19px;line-height:2;color:#3e5260}
+.btn{margin-top:32px;display:inline-flex;align-items:center;height:68px;padding:0 38px;border-radius:12px;background:#ff8a3d;color:#fff;font-size:19px;font-weight:700;box-shadow:0 14px 30px -12px rgba(255,120,40,.7)}
+.cols{position:absolute;right:-2%;top:-20%;width:54%;height:140%;display:flex;gap:18px;transform:rotate(-8deg)}
+.col{flex:1;display:flex;flex-direction:column;gap:18px;animation:fl 60s linear infinite}
+.col.r{animation-direction:reverse}
+.col img{width:100%;aspect-ratio:3/3.6;object-fit:cover;border-radius:18px}
+@keyframes fl{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.num{margin-top:34px;display:flex;gap:40px}
+.num div{font-size:15px;color:#5d7380}.num strong{display:block;font-family:"Oswald";font-size:46px;color:#1d5c7a;line-height:1.1}.num i{font-style:normal;font-size:17px}
+.h:before{content:"";position:absolute;right:0;top:0;bottom:0;width:52%;background:#e6f2f7}
+</style></head><body><div class="demo">制作デモサイト｜院名・料金などはすべて架空のサンプルです</div><header class="up"><div class="logo">はる整体院<small>HARU SEITAI</small></div><div class="tel"><small>受付 9:00〜20:00</small>00-0000-0000</div></header>
+<section class="h"><div class="txt"><span class="badge up d1">肩・腰・首のつらさに</span><h1 class="up d2">もう、痛みを<br><b>がまんしない</b><br>毎日へ。</h1><p class="lead up d3">ボキボキしない、やさしい整体。<br>話を聞くところから、ていねいに。</p><a class="btn shine up d4" href="#">初回 ¥3,980 で予約する</a><div class="num up d5"><div>施術歴<strong>18<i>年</i></strong></div><div>延べ施術<strong>12,000<i>名</i></strong></div></div></div>
+<div class="cols"><div class="col"><img src="../assets/treat.jpg"><img src="../assets/room.jpg"><img src="../assets/staff.jpg"><img src="../assets/treat.jpg"><img src="../assets/room.jpg"><img src="../assets/staff.jpg"></div><div class="col r"><img src="../assets/counsel.jpg"><img src="../assets/head.jpg"><img src="../assets/table.jpg"><img src="../assets/counsel.jpg"><img src="../assets/head.jpg"><img src="../assets/table.jpg"></div><div class="col"><img src="../assets/shoulder.jpg"><img src="../assets/treat.jpg"><img src="../assets/room.jpg"><img src="../assets/shoulder.jpg"><img src="../assets/treat.jpg"><img src="../assets/room.jpg"></div></div></section></body></html>

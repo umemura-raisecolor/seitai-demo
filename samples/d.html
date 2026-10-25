@@ -1,0 +1,31 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}a{color:inherit;text-decoration:none}body{font-family:"Zen Kaku Gothic New",sans-serif;overflow-x:hidden}
+.demo{background:#16302a;color:#dfe7df;font-size:14px;text-align:center;padding:6px}
+.shine{position:relative;overflow:hidden}.shine:before{content:"";position:absolute;top:-20%;left:-60%;width:40%;height:140%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-22deg);animation:sh 5.5s ease-in-out infinite}@keyframes sh{0%,62%{left:-60%}100%{left:140%}}
+.up{opacity:0;transform:translateY(26px);animation:up 1.8s cubic-bezier(.22,.61,.36,1) forwards}@keyframes up{to{opacity:1;transform:none}}
+.d1{animation-delay:.4s}.d2{animation-delay:.9s}.d3{animation-delay:1.4s}.d4{animation-delay:1.9s}.d5{animation-delay:2.4s}
+</style><style>
+body{background:#1c1f1e;color:#fff}
+.h{position:relative;height:calc(100vh - 32px);min-height:620px;display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden}
+.panel{position:relative;overflow:hidden;clip-path:inset(0 0 100% 0);animation:pn 2.2s cubic-bezier(.22,.61,.36,1) forwards}
+.panel:nth-child(2){animation-delay:.35s}.panel:nth-child(3){animation-delay:.7s}
+@keyframes pn{to{clip-path:inset(0 0 0 0)}}
+.panel img{width:100%;height:100%;object-fit:cover;filter:brightness(.62);animation:zm 16s linear infinite alternate}@keyframes zm{to{transform:scale(1.12)}}
+.panel span{position:absolute;left:28px;top:110px;font-family:"Shippori Mincho";font-size:22px;letter-spacing:.3em;writing-mode:vertical-rl}
+header{position:absolute;z-index:3;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:24px 44px}
+.logo{font-family:"Shippori Mincho";font-weight:700;font-size:26px;letter-spacing:.18em}
+.tel{font-family:"Oswald";font-size:28px;letter-spacing:.05em}
+.mid{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:100%}
+.mid small{display:block;font-family:"Cormorant Garamond";font-style:italic;font-size:24px;letter-spacing:.3em;color:#d9bf8c;margin-bottom:12px}
+.mid h1{font-family:"Shippori Mincho";font-weight:700;font-size:clamp(46px,5.6vw,84px);line-height:1.45;letter-spacing:.12em;text-shadow:0 4px 30px rgba(0,0,0,.5)}
+.mid p{margin-top:20px;font-size:19px;letter-spacing:.1em}
+.btn{margin-top:34px;display:inline-flex;align-items:center;height:66px;padding:0 38px;border-radius:999px;background:#fff;color:#16302a;font-size:18px;font-weight:700}
+.line{position:absolute;z-index:3;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:60px;padding:18px;background:rgba(0,0,0,.35);backdrop-filter:blur(8px);font-size:16px}
+.line b{font-family:"Oswald";font-size:30px;color:#d9bf8c;margin:0 4px}
+</style></head><body><div class="demo">制作デモサイト｜院名・料金などはすべて架空のサンプルです</div><section class="h">
+<div class="panel"><img src="../assets/counsel.jpg"><span>きく</span></div><div class="panel"><img src="../assets/treat.jpg"><span>ととのえる</span></div><div class="panel"><img src="../assets/room.jpg"><span>つづける</span></div>
+<header class="up d2"><div class="logo">はる整体院</div><div class="tel">00-0000-0000</div></header>
+<div class="mid"><small class="up d3">Listen. Adjust. Continue.</small><h1 class="up d3">痛みの理由まで、<br>いっしょに探す。</h1><p class="up d4">完全予約制・ボキボキしない、やさしい整体</p><a class="btn shine up d5" href="#">初回体験 ¥3,980 で予約する</a></div>
+<div class="line up d5"><span>施術歴<b>18</b>年</span><span>延べ施術<b>12,000</b>名</span><span>〇〇駅 徒歩<b>3</b>分</span></div>
+</section></body></html>
