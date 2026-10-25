@@ -158,7 +158,7 @@ section{position:relative}
 /* ===== think ===== */
 .think{overflow:hidden;background:linear-gradient(180deg,#fff,#faf7fc 50%,#fff)}
 .tk-word{position:absolute;right:-2vw;top:30px;font-family:var(--en);font-style:italic;font-size:18vw;line-height:1;color:rgba(143,116,176,.06);pointer-events:none;animation:fw 46s linear infinite alternate}
-.tk-wrap{max-width:1100px;text-align:center}
+.tk-wrap{max-width:1180px;text-align:center}
 .tk-title{margin-top:8px;font-weight:500;font-size:clamp(34px,4vw,56px);line-height:1.7;letter-spacing:.2em;color:var(--ink)}
 .tk-title span{display:inline-block}
 .tk-bar{display:block;width:1px;height:90px;margin:34px auto 46px;background:linear-gradient(var(--lav),transparent);transform-origin:top}
@@ -169,8 +169,9 @@ section{position:relative}
 .tk-title.in span{opacity:1;transform:none}
 .tk-bar.tk-in{transform:scaleY(0);filter:none;transition:transform 2s var(--slow) .8s,opacity 1s ease .8s}
 .tk-bar.tk-in.in{transform:scaleY(1)}
-.tk-body{font-size:clamp(20px,1.8vw,25px);line-height:2.5;letter-spacing:.14em;color:var(--text)}
-.tk-line{overflow:hidden;padding:2px 0}
+.tk-body{font-size:clamp(17px,1.5vw,22px);line-height:2.4;letter-spacing:.06em;color:var(--text)}
+.tk-line{overflow:hidden;padding:6px 0;white-space:nowrap}
+.tk-line+.tk-line{margin-top:.9em}
 .tk-line.gap{margin-top:1.1em}
 .tk-line span{display:inline-block;opacity:0;transform:translateY(-110%);filter:blur(4px);transition:opacity 1.6s ease,transform 1.6s var(--slow),filter 1.6s ease}
 .tk-line.in span{opacity:1;transform:none;filter:none}
@@ -359,7 +360,8 @@ section{position:relative}
   .wq-float{display:none}
   .wq-answer{padding:50px 20px 36px;border-radius:30px}
   .wq-answer p{font-size:18px}
-  .tk-body{font-size:17.5px;line-height:2.3;letter-spacing:.08em}
+  .tk-body{font-size:17.5px;line-height:2.2;letter-spacing:.05em;text-align:left}
+  .tk-line{white-space:normal}
   .tk-title{letter-spacing:.12em}
   .menu-grid,.voice-grid{grid-template-columns:1fr}
   .first{border-radius:30px;flex-direction:column;text-align:center;padding:34px 24px}
@@ -468,7 +470,7 @@ section{position:relative}
     <p class="label tk-in">Think</p>
     <h2 class="tk-title tk-in"><span>押す前に、</span><span>まず聞くこと。</span></h2>
     <span class="tk-bar tk-in" aria-hidden="true"></span>
-    <div class="tk-body"><p class="tk-line"><span>はじめての日は、30分ほどかけて、</span></p><p class="tk-line"><span>お仕事のこと、暮らしのこと、</span></p><p class="tk-line"><span>いつから気になっているのかを、ゆっくりうかがいます。</span></p><p class="tk-line gap"><span>同じ「肩こり」でも、<em>原因はお一人おひとり違う</em>ので、</span></p><p class="tk-line"><span>話を聞かずに施術を始めることはしません。</span></p><p class="tk-line gap"><span>ボキボキ鳴らさない、<em>やさしい手技</em>で、</span></p><p class="tk-line"><span>からだの状態を一緒に確かめながら、</span></p><p class="tk-line"><span><em>納得してから</em>進めていきます。</span></p></div>
+    <div class="tk-body"><p class="tk-line"><span>はじめての日は30分ほどかけて、お仕事や暮らし、いつから気になっているのかをうかがいます。</span></p><p class="tk-line"><span>同じ「肩こり」でも<em>原因はお一人おひとり違う</em>ので、話を聞かずに施術を始めることはしません。</span></p><p class="tk-line"><span>ボキボキ鳴らさない<em>やさしい手技</em>で、からだの状態を一緒に確かめながら、<em>納得してから</em>進めます。</span></p></div>
   </div>
 </section>
 
