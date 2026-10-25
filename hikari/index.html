@@ -159,7 +159,27 @@ section{position:relative}
 /* ===== director ===== */
 .director{overflow:hidden}
 .dir-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:90px;align-items:center}
-.dir-img{border-radius:999px;overflow:hidden;aspect-ratio:3/3.9;max-width:420px;margin-left:auto;box-shadow:0 40px 70px -40px rgba(63,58,69,.5)}
+.dir-visual{position:relative;max-width:460px;width:100%;margin-left:auto;padding:30px 30px 60px 10px}
+.dv-arch{position:absolute;right:-6px;top:0;width:82%;height:86%;border-radius:999px 999px 30px 30px;background:linear-gradient(160deg,#ece4f5,#f7eef2);transform:translate(30px,-10px);opacity:0;transition:opacity 2s ease,transform 2.4s var(--slow)}
+.dv-line{position:absolute;left:-14px;top:50px;width:84%;height:88%;border-radius:999px;border:1px solid rgba(143,116,176,.45);opacity:0;transform:translate(-20px,20px);transition:opacity 2s ease .4s,transform 2.4s var(--slow) .4s}
+.dv-dots{position:absolute;left:-30px;bottom:30px;width:150px;height:110px;background:radial-gradient(circle,rgba(143,116,176,.45) 1.6px,transparent 2px) 0 0/16px 16px;opacity:0;transition:opacity 2s ease .8s}
+.dir-img{position:relative;z-index:1;border-radius:999px;overflow:hidden;aspect-ratio:3/3.9;box-shadow:0 40px 70px -40px rgba(63,58,69,.5);clip-path:inset(100% 0 0 0 round 999px);transition:clip-path 2.6s var(--slow)}
+.dir-img img{transform:scale(1.18);transition:transform 4s var(--slow);filter:saturate(1.05) brightness(1.04)}
+.dir-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(233,226,242,0) 55%,rgba(143,116,176,.22))}
+.dv-sub{position:absolute;z-index:2;left:-40px;bottom:40px;width:44%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:8px solid #fff;box-shadow:0 26px 50px -26px rgba(63,58,69,.55);opacity:0;transform:translateY(40px) scale(.9);transition:opacity 1.8s var(--slow) 1.4s,transform 1.8s var(--slow) 1.4s}
+.dv-sub img{width:100%;height:100%;object-fit:cover}
+.dv-ring{position:absolute;z-index:3;right:-26px;top:6px;width:150px;height:150px;animation:spin 36s linear infinite;opacity:0;transition:opacity 2s ease 1.8s}
+.dv-ring text{font-family:var(--en);font-size:15.5px;letter-spacing:.22em;fill:var(--lav-d)}
+.dv-ring circle{fill:#fff;stroke:rgba(143,116,176,.35)}
+.dv-ring-mark{position:absolute;z-index:4;right:22px;top:54px;width:54px;text-align:center;font-family:var(--serif);font-size:30px;color:var(--lav-d);opacity:0;transition:opacity 2s ease 2s}
+.dv-card{position:absolute;z-index:4;right:-10px;bottom:20px;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);border:1px solid #fff;border-radius:22px;padding:18px 26px;box-shadow:0 24px 44px -26px rgba(63,58,69,.55);font-family:var(--sans);line-height:1.5;opacity:0;transform:translateX(30px);transition:opacity 1.8s var(--slow) 2.2s,transform 1.8s var(--slow) 2.2s}
+.dv-card small{display:block;font-family:var(--en);font-style:italic;font-size:16px;color:var(--lav)}
+.dv-card strong{display:block;font-family:var(--serif);font-weight:500;font-size:23px;color:var(--ink);letter-spacing:.1em}
+.dv-card span{font-size:15px;color:var(--muted)}
+.dir-visual.in .dv-arch{opacity:1;transform:none}.dir-visual.in .dv-line{opacity:1;transform:none}.dir-visual.in .dv-dots{opacity:1}
+.dir-visual.in .dir-img{clip-path:inset(0 0 0 0 round 999px)}.dir-visual.in .dir-img img{transform:scale(1)}
+.dir-visual.in .dv-sub,.dir-visual.in .dv-card{opacity:1;transform:none}.dir-visual.in .dv-ring,.dir-visual.in .dv-ring-mark{opacity:1}
+.dir-visual .dv-sub img{animation:fl 9s ease-in-out infinite alternate}
 .dir-img img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 .dir-txt p{margin-top:22px;font-size:19px;line-height:2.25}
 .sign{margin-top:30px;font-size:16px;color:var(--muted);font-family:var(--sans)}
@@ -293,7 +313,9 @@ section{position:relative}
   .think-img .sub{right:-6px;bottom:-30px}
   .menu-grid,.voice-grid{grid-template-columns:1fr}
   .first{border-radius:30px;flex-direction:column;text-align:center;padding:34px 24px}
-  .dir-img{margin:0 auto;max-width:300px}
+  .dir-visual{margin:0 auto;max-width:340px;padding:20px 20px 50px 20px}
+  .dv-ring{width:120px;height:120px;right:-10px}.dv-ring-mark{right:23px;top:44px;font-size:26px}
+  .dv-sub{left:-6px}.dv-card{right:0;padding:14px 18px}.dv-card strong{font-size:20px}
   .flow-line{display:none}
   .flow-lead br{display:none}.flow-lead{text-align:left}
   .flow-list{grid-template-columns:1fr;gap:56px}
@@ -429,7 +451,17 @@ section{position:relative}
 <section class="director pad" id="about">
   <span class="spk" style="left:10%;bottom:120px;animation-delay:-2s"></span>
   <div class="wrap dir-grid">
-    <div class="dir-img rv"><img src="../assets/staff.jpg" alt="院長"></div>
+    <div class="dir-visual" id="dirVisual">
+      <span class="dv-arch" aria-hidden="true"></span>
+      <span class="dv-line" aria-hidden="true"></span>
+      <span class="dv-dots" aria-hidden="true"></span>
+      <div class="dir-img"><img src="../assets/staff.jpg" alt="院長"></div>
+      <div class="dv-sub"><img src="https://images.unsplash.com/photo-1763982811968-14e8aba3be09?auto=format&fit=crop&w=600&h=600&q=80" alt=""></div>
+      <svg class="dv-ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="dvc" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><text><textPath href="#dvc">MESSAGE FROM DIRECTOR · HIKARI SEITAI · </textPath></text><circle cx="100" cy="100" r="46"/></svg>
+      <span class="dv-ring-mark" aria-hidden="true">光</span>
+      <div class="dv-card"><small>Director</small><strong>施術歴 18年</strong><span>柔道整復師</span></div>
+      <span class="spk" style="left:4%;top:12%"></span><span class="spk" style="right:2%;top:46%;animation-delay:-2.5s"></span><span class="spk" style="left:22%;bottom:-2%;animation-delay:-5s"></span>
+    </div>
     <div class="dir-txt rv d1">
       <p class="label">About</p>
       <h2 class="h2">「年だから」と、<br>あきらめないでほしい。</h2>
@@ -528,7 +560,7 @@ section{position:relative}
   var ph=document.querySelectorAll('.hero .ph'),i=0;
   setInterval(function(){ph[i].classList.remove('on');i=(i+1)%ph.length;ph[i].classList.add('on')},8000);
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
-  document.querySelectorAll('.rv,.flow-box').forEach(function(el){io.observe(el)});
+  document.querySelectorAll('.rv,.flow-box,.dir-visual').forEach(function(el){io.observe(el)});
   var ui=document.getElementById('topUi'),cta=document.getElementById('fixedCta');
   window.addEventListener('scroll',function(){var y=window.scrollY;ui.classList.toggle('stuck',y>30);cta.classList.toggle('show',y>window.innerHeight*.6)},{passive:true});
 })();
