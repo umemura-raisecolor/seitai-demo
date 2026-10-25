@@ -113,15 +113,47 @@ section{position:relative}
 .worries:before,.worries:after,.voices:before,.voices:after{content:"";position:absolute;left:0;right:0;height:70px;background:no-repeat center/100% 100%}
 .worries:before,.voices:before{top:-69px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70' preserveAspectRatio='none'%3E%3Cpath d='M0 70V40C240 0 480 0 720 30S1200 70 1440 20V70Z' fill='%23f7f2f5'/%3E%3C/svg%3E")}
 .worries:after,.voices:after{bottom:-69px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70' preserveAspectRatio='none'%3E%3Cpath d='M0 0V40C300 80 560 60 760 36S1180 0 1440 40V0Z' fill='%23f7f2f5'/%3E%3C/svg%3E")}
-.worry-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center;margin-top:56px}
-.worry-imgs{position:relative;height:520px}
-.worry-imgs .fp:nth-child(1){left:0;top:0;width:62%;height:300px;border-radius:999px 999px 24px 24px}
-.worry-imgs .fp:nth-child(2){right:0;top:140px;width:46%;height:220px;border-radius:24px}
-.worry-imgs .fp:nth-child(3){left:14%;bottom:0;width:44%;height:180px;border-radius:999px}
-.check li{position:relative;padding:22px 0 22px 50px;border-bottom:1px dashed rgba(143,116,176,.4);font-size:20px;color:var(--ink);line-height:1.7}
-.check li:before{content:"";position:absolute;left:4px;top:30px;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--lav)}
-.check li:after{content:"";position:absolute;left:11px;top:35px;width:8px;height:12px;border-right:2px solid var(--lav);border-bottom:2px solid var(--lav);transform:rotate(45deg)}
-.worry-foot{margin-top:40px;font-size:21px;line-height:2;color:var(--lav-d)}
+.worries{overflow:visible}
+.wq-word{position:absolute;left:-1vw;top:40px;font-family:var(--en);font-style:italic;font-size:16vw;line-height:1;color:rgba(143,116,176,.07);pointer-events:none;animation:fw 44s linear infinite alternate}
+.wq-float{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.wq-float span{position:absolute;font-family:var(--sans);font-size:15px;color:var(--lav-d);background:rgba(255,255,255,.7);border:1px solid var(--lav-l);border-radius:999px;padding:4px 16px;animation:wf 10s ease-in-out infinite alternate;opacity:.8}
+@keyframes wf{from{transform:translateY(0) rotate(-3deg)}to{transform:translateY(-22px) rotate(3deg)}}
+.wq-lead{margin-top:10px;font-size:18px;color:var(--muted)}
+.wq-grid{position:relative;z-index:1;margin-top:60px;display:grid;grid-template-columns:repeat(4,1fr);gap:26px;align-items:start}
+.wq-grid li{position:relative;background:#fff;border-radius:34px;padding:34px 14px 30px;text-align:center;box-shadow:0 30px 60px -44px rgba(63,58,69,.6);opacity:0;transform:translateY(60px) rotate(-2deg);transition:opacity 1.8s var(--slow),transform 1.8s var(--slow),box-shadow .9s}
+.wq-grid li:nth-child(even){margin-top:60px}
+.wq-grid.in li{opacity:1;transform:none}
+.wq-grid.in li:nth-child(2){transition-delay:.5s}.wq-grid.in li:nth-child(3){transition-delay:1s}.wq-grid.in li:nth-child(4){transition-delay:1.5s}
+.wq-grid li:hover{transform:translateY(-8px);box-shadow:0 40px 60px -40px rgba(111,88,145,.6)}
+.wq-ph{position:relative;width:170px;height:170px;margin:0 auto 18px}
+.wq-ring{position:absolute;inset:-10px;border-radius:50%;border:1.5px dashed rgba(143,116,176,.5);animation:spin 38s linear infinite}
+.wq-blob{position:absolute;inset:0;overflow:hidden;border-radius:58% 42% 52% 48%/48% 56% 44% 52%;animation:morph 12s ease-in-out infinite alternate;box-shadow:0 18px 30px -18px rgba(63,58,69,.6)}
+.wq-grid li:nth-child(2) .wq-blob{animation-delay:-3s}.wq-grid li:nth-child(3) .wq-blob{animation-delay:-6s}.wq-grid li:nth-child(4) .wq-blob{animation-delay:-9s}
+@keyframes morph{0%{border-radius:58% 42% 52% 48%/48% 56% 44% 52%}50%{border-radius:44% 56% 40% 60%/58% 42% 58% 42%}100%{border-radius:52% 48% 62% 38%/42% 60% 40% 58%}}
+.wq-blob img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) brightness(1.04);transition:filter 1.4s,transform 1.4s var(--slow)}
+.wq-grid li:hover .wq-blob img{filter:none;transform:scale(1.08)}
+.wq-tag{position:absolute;right:-26px;bottom:6px;background:var(--lav);color:#fff;font-family:var(--sans);font-size:15px;font-weight:700;line-height:1.25;padding:8px 14px;border-radius:16px 16px 16px 4px;box-shadow:0 10px 20px -10px rgba(111,88,145,.9);transform:scale(0);transform-origin:left bottom;transition:transform 1.2s cubic-bezier(.34,1.56,.64,1)}
+.wq-tag i{display:block;font-family:var(--en);font-weight:500;font-size:13px;letter-spacing:.06em;opacity:.85}
+.wq-grid.in .wq-tag{transform:none}
+.wq-grid.in li:nth-child(1) .wq-tag{transition-delay:1s}.wq-grid.in li:nth-child(2) .wq-tag{transition-delay:1.5s}.wq-grid.in li:nth-child(3) .wq-tag{transition-delay:2s}.wq-grid.in li:nth-child(4) .wq-tag{transition-delay:2.5s}
+.wq-no{position:absolute;left:22px;top:16px;font-family:var(--en);font-style:italic;font-size:34px;color:var(--lav-l);line-height:1}
+.wq-grid p{font-size:17.5px;line-height:1.85;color:var(--ink);letter-spacing:.02em}
+.wq-ck{display:block;width:40px;height:40px;margin:0 auto 10px}
+.wq-ck svg{width:100%;height:100%;fill:none;stroke:var(--lav);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.wq-ck circle{stroke-dasharray:90;stroke-dashoffset:90;transition:stroke-dashoffset 1.4s ease}
+.wq-ck path{stroke-width:2.6;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .9s ease}
+.wq-grid.in .wq-ck circle,.wq-grid.in .wq-ck path{stroke-dashoffset:0}
+.wq-grid.in li:nth-child(1) .wq-ck circle{transition-delay:1.6s}.wq-grid.in li:nth-child(1) .wq-ck path{transition-delay:2.6s}
+.wq-grid.in li:nth-child(2) .wq-ck circle{transition-delay:2.3s}.wq-grid.in li:nth-child(2) .wq-ck path{transition-delay:3.3s}
+.wq-grid.in li:nth-child(3) .wq-ck circle{transition-delay:3s}.wq-grid.in li:nth-child(3) .wq-ck path{transition-delay:4s}
+.wq-grid.in li:nth-child(4) .wq-ck circle{transition-delay:3.7s}.wq-grid.in li:nth-child(4) .wq-ck path{transition-delay:4.7s}
+.wq-answer{position:relative;z-index:1;margin:90px auto 0;max-width:760px;text-align:center;background:linear-gradient(120deg,#fff,#f3edf8);border-radius:40px;padding:56px 30px 46px;box-shadow:0 30px 60px -44px rgba(111,88,145,.7)}
+.wq-arrow{position:absolute;left:50%;top:-34px;width:68px;height:68px;margin-left:-34px;border-radius:50%;background:var(--lav);box-shadow:0 12px 24px -10px rgba(111,88,145,.9);animation:bob 2.6s ease-in-out infinite}
+.wq-arrow:after{content:"";position:absolute;left:50%;top:44%;width:14px;height:14px;border-right:2px solid #fff;border-bottom:2px solid #fff;transform:translate(-50%,-50%) rotate(45deg)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.wq-answer p{font-size:21px;line-height:2;color:var(--ink)}
+.wq-answer b{font-weight:500;color:var(--lav-d);background:linear-gradient(transparent 62%,rgba(200,171,116,.35) 62%)}
+.wq-answer .btn{margin-top:26px}
 
 /* ===== think ===== */
 .think-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:90px;align-items:center}
@@ -305,11 +337,16 @@ section{position:relative}
   .intro-v p{font-size:24px}
   .intro-sub{position:relative;bottom:auto;font-size:17.5px;text-align:left}
   .worry-wrap,.think-grid,.dir-grid,.acc-grid{grid-template-columns:1fr;gap:50px}
-  .worry-imgs{height:360px}
-  .worry-imgs .fp:nth-child(1){height:220px}
-  .worry-imgs .fp:nth-child(2){top:110px;height:160px}
-  .worry-imgs .fp:nth-child(3){height:130px}
-  .check li{font-size:18px}
+  .wq-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .wq-grid li{padding:26px 12px 22px;border-radius:26px}
+  .wq-grid li:nth-child(even){margin-top:34px}
+  .wq-ph{width:112px;height:112px}
+  .wq-tag{right:-30px;font-size:13px;padding:6px 10px}.wq-tag i{font-size:11px}
+  .wq-no{font-size:24px;left:14px;top:10px}
+  .wq-grid p{font-size:15.5px}.wq-grid p br{display:none}
+  .wq-float{display:none}
+  .wq-answer{padding:50px 20px 36px;border-radius:30px}
+  .wq-answer p{font-size:18px}
   .think-img .sub{right:-6px;bottom:-30px}
   .menu-grid,.voice-grid{grid-template-columns:1fr}
   .first{border-radius:30px;flex-direction:column;text-align:center;padding:34px 24px}
@@ -392,23 +429,20 @@ section{position:relative}
 
 <!-- WORRIES -->
 <section class="worries pad" id="worries">
+  <div class="wq-float" aria-hidden="true"><span style="left:6%;top:18%">肩こり</span><span style="left:84%;top:12%;animation-delay:-3s">腰のはり</span><span style="left:12%;top:78%;animation-delay:-6s">猫背</span><span style="left:88%;top:70%;animation-delay:-2s">頭が重い</span><span style="left:50%;top:6%;animation-delay:-8s">ねむりが浅い</span></div>
+  <span class="wq-word" aria-hidden="true">Worries</span>
   <div class="wrap">
-    <div class="center rv"><p class="label">Worries</p><h2 class="h2">こんなお悩み、ありませんか</h2></div>
-    <div class="worry-wrap">
-      <div class="worry-imgs">
-        <div class="fp float rv"><img src="../assets/shoulder.jpg" alt="肩をおさえる人"></div>
-        <div class="fp float s rv d1"><img src="../assets/waist2.jpg" alt="腰に手をあてる人"></div>
-        <div class="fp float rv d2"><img src="../assets/neck.jpg" alt="首をおさえる人"></div>
-      </div>
-      <div class="rv d1">
-        <ul class="check">
-          <li>肩や首がずっと重くて、朝からつらい</li>
-          <li>腰が気になって、立ち上がるのがこわい</li>
-          <li>マッサージに行っても、すぐ元に戻ってしまう</li>
-          <li>「年だから仕方ない」と、あきらめかけている</li>
-        </ul>
-        <p class="worry-foot">ひとつでも当てはまったら、<br>一度、からだの声を聞かせてください。</p>
-      </div>
+    <div class="center rv"><p class="label">Worries</p><h2 class="h2">こんなお悩み、ありませんか</h2><p class="wq-lead">ひとつずつ、あてはまるか確かめてみてください。</p></div>
+    <ul class="wq-grid" id="wqGrid">
+      <li><div class="wq-ph"><span class="wq-ring"></span><span class="wq-blob"><img src="../assets/shoulder.jpg" alt="肩をおさえる人"></span><span class="wq-tag"><i>Shoulder</i>肩・首</span></div><span class="wq-no">01</span><p><span class="wq-ck"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="14"/><path d="M9 16.5l5 5 9-10"/></svg></span>肩や首がずっと重くて、<br>朝からつらい</p></li>
+      <li><div class="wq-ph"><span class="wq-ring"></span><span class="wq-blob"><img src="../assets/waist2.jpg" alt="腰に手をあてる人"></span><span class="wq-tag"><i>Lower back</i>腰</span></div><span class="wq-no">02</span><p><span class="wq-ck"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="14"/><path d="M9 16.5l5 5 9-10"/></svg></span>腰が気になって、<br>立ち上がるのがこわい</p></li>
+      <li><div class="wq-ph"><span class="wq-ring"></span><span class="wq-blob"><img src="../assets/neck.jpg" alt="首をおさえる人"></span><span class="wq-tag"><i>Again</i>くり返す</span></div><span class="wq-no">03</span><p><span class="wq-ck"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="14"/><path d="M9 16.5l5 5 9-10"/></svg></span>マッサージに行っても、<br>すぐ元に戻ってしまう</p></li>
+      <li><div class="wq-ph"><span class="wq-ring"></span><span class="wq-blob"><img src="../assets/tired.jpg" alt="疲れた表情の人"></span><span class="wq-tag"><i>Give up</i>あきらめ</span></div><span class="wq-no">04</span><p><span class="wq-ck"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="14"/><path d="M9 16.5l5 5 9-10"/></svg></span>「年だから仕方ない」と、<br>あきらめかけている</p></li>
+    </ul>
+    <div class="wq-answer rv">
+      <span class="wq-arrow" aria-hidden="true"></span>
+      <p>ひとつでも当てはまったら、<br><b>一度、からだの声を聞かせてください。</b></p>
+      <a class="btn shine" href="#reserve">初回のご予約はこちら →</a>
     </div>
   </div>
 </section>
@@ -560,7 +594,7 @@ section{position:relative}
   var ph=document.querySelectorAll('.hero .ph'),i=0;
   setInterval(function(){ph[i].classList.remove('on');i=(i+1)%ph.length;ph[i].classList.add('on')},8000);
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
-  document.querySelectorAll('.rv,.flow-box,.dir-visual').forEach(function(el){io.observe(el)});
+  document.querySelectorAll('.rv,.flow-box,.dir-visual,.wq-grid').forEach(function(el){io.observe(el)});
   var ui=document.getElementById('topUi'),cta=document.getElementById('fixedCta');
   window.addEventListener('scroll',function(){var y=window.scrollY;ui.classList.toggle('stuck',y>30);cta.classList.toggle('show',y>window.innerHeight*.6)},{passive:true});
 })();
