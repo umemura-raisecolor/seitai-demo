@@ -156,14 +156,26 @@ section{position:relative}
 .wq-answer .btn{margin-top:26px}
 
 /* ===== think ===== */
-.think-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:90px;align-items:center}
-.think-img{position:relative}
-.think-img .main{border-radius:200px 200px 28px 28px;overflow:hidden;aspect-ratio:4/4.3}
-.think-img .main img{width:100%;height:100%;object-fit:cover;object-position:40% center}
-.think-img .sub{position:absolute;right:-40px;bottom:-40px;width:42%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:8px solid #fff}
-.think-img .sub img{width:100%;height:100%;object-fit:cover}
-.think-txt p{margin-top:24px;font-size:19px;line-height:2.25}
-.think-txt .h2{margin-bottom:10px}
+.think{overflow:hidden;background:linear-gradient(180deg,#fff,#faf7fc 50%,#fff)}
+.tk-word{position:absolute;right:-2vw;top:30px;font-family:var(--en);font-style:italic;font-size:18vw;line-height:1;color:rgba(143,116,176,.06);pointer-events:none;animation:fw 46s linear infinite alternate}
+.tk-wrap{max-width:1100px;text-align:center}
+.tk-title{margin-top:8px;font-weight:500;font-size:clamp(34px,4vw,56px);line-height:1.7;letter-spacing:.2em;color:var(--ink)}
+.tk-title span{display:inline-block}
+.tk-bar{display:block;width:1px;height:90px;margin:34px auto 46px;background:linear-gradient(var(--lav),transparent);transform-origin:top}
+.tk-in{opacity:0;transform:translateY(-40px);filter:blur(6px);transition:opacity 1.8s ease,transform 1.8s var(--slow),filter 1.8s ease}
+.tk-in.in{opacity:1;transform:none;filter:none}
+.tk-title.in span:nth-child(2){transition-delay:.4s}
+.tk-title span{opacity:0;transform:translateY(-36px);transition:opacity 1.8s ease,transform 1.8s var(--slow)}
+.tk-title.in span{opacity:1;transform:none}
+.tk-bar.tk-in{transform:scaleY(0);filter:none;transition:transform 2s var(--slow) .8s,opacity 1s ease .8s}
+.tk-bar.tk-in.in{transform:scaleY(1)}
+.tk-body{font-size:clamp(20px,1.8vw,25px);line-height:2.5;letter-spacing:.14em;color:var(--text)}
+.tk-line{overflow:hidden;padding:2px 0}
+.tk-line.gap{margin-top:1.1em}
+.tk-line span{display:inline-block;opacity:0;transform:translateY(-110%);filter:blur(4px);transition:opacity 1.6s ease,transform 1.6s var(--slow),filter 1.6s ease}
+.tk-line.in span{opacity:1;transform:none;filter:none}
+.tk-line em{font-style:normal;color:var(--lav-d);background:linear-gradient(transparent 64%,rgba(200,171,116,.38) 64%) no-repeat 0 0/0% 100%;transition:background-size 1.6s ease 1.2s}
+.tk-line.in em{background-size:100% 100%}
 
 /* ===== menu ===== */
 .menu{background:var(--mist)}
@@ -347,7 +359,8 @@ section{position:relative}
   .wq-float{display:none}
   .wq-answer{padding:50px 20px 36px;border-radius:30px}
   .wq-answer p{font-size:18px}
-  .think-img .sub{right:-6px;bottom:-30px}
+  .tk-body{font-size:17.5px;line-height:2.3;letter-spacing:.08em}
+  .tk-title{letter-spacing:.12em}
   .menu-grid,.voice-grid{grid-template-columns:1fr}
   .first{border-radius:30px;flex-direction:column;text-align:center;padding:34px 24px}
   .dir-visual{margin:0 auto;max-width:340px;padding:20px 20px 50px 20px}
@@ -449,18 +462,13 @@ section{position:relative}
 
 <!-- THINK -->
 <section class="think pad" id="think">
-  <span class="spk" style="left:6%;top:120px;animation-delay:-1s"></span><span class="spk" style="right:8%;bottom:140px;animation-delay:-3s"></span>
-  <div class="wrap think-grid">
-    <div class="think-img rv">
-      <div class="main"><img src="../assets/counsel.jpg" alt="カウンセリングの様子"></div>
-      <div class="sub"><img src="../assets/table.jpg" alt=""></div>
-    </div>
-    <div class="think-txt rv d1">
-      <p class="label">Think</p>
-      <h2 class="h2">押す前に、<br>まず聞くこと。</h2>
-      <p>はじめての日は、30分ほどかけて、お仕事のこと、暮らしのこと、いつから気になっているのかをうかがいます。</p>
-      <p>同じ「肩こり」でも、原因はお一人おひとり違うので、話を聞かずに施術を始めることはしません。ボキボキ鳴らさない、やさしい手技で、からだの状態を一緒に確かめながら進めていきます。</p>
-    </div>
+  <span class="tk-word" aria-hidden="true">Think</span>
+  <span class="spk" style="left:6%;top:120px;animation-delay:-1s"></span><span class="spk" style="right:8%;bottom:140px;animation-delay:-3s"></span><span class="spk" style="right:20%;top:200px;animation-delay:-5s"></span>
+  <div class="wrap tk-wrap">
+    <p class="label tk-in">Think</p>
+    <h2 class="tk-title tk-in"><span>押す前に、</span><span>まず聞くこと。</span></h2>
+    <span class="tk-bar tk-in" aria-hidden="true"></span>
+    <div class="tk-body"><p class="tk-line"><span>はじめての日は、30分ほどかけて、</span></p><p class="tk-line"><span>お仕事のこと、暮らしのこと、</span></p><p class="tk-line"><span>いつから気になっているのかを、ゆっくりうかがいます。</span></p><p class="tk-line gap"><span>同じ「肩こり」でも、<em>原因はお一人おひとり違う</em>ので、</span></p><p class="tk-line"><span>話を聞かずに施術を始めることはしません。</span></p><p class="tk-line gap"><span>ボキボキ鳴らさない、<em>やさしい手技</em>で、</span></p><p class="tk-line"><span>からだの状態を一緒に確かめながら、</span></p><p class="tk-line"><span><em>納得してから</em>進めていきます。</span></p></div>
   </div>
 </section>
 
@@ -594,7 +602,9 @@ section{position:relative}
   var ph=document.querySelectorAll('.hero .ph'),i=0;
   setInterval(function(){ph[i].classList.remove('on');i=(i+1)%ph.length;ph[i].classList.add('on')},8000);
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
-  document.querySelectorAll('.rv,.flow-box,.dir-visual,.wq-grid').forEach(function(el){io.observe(el)});
+  document.querySelectorAll('.rv,.flow-box,.dir-visual,.wq-grid,.tk-in').forEach(function(el){io.observe(el)});
+  var q=0,qt=0;var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var now=Date.now();if(now-qt>900)q=0;qt=now;var el=e.target;setTimeout(function(){el.classList.add('in')},400+q*450);q++;io2.unobserve(el)})},{threshold:.6,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.tk-line').forEach(function(el){io2.observe(el)});
   var ui=document.getElementById('topUi'),cta=document.getElementById('fixedCta');
   window.addEventListener('scroll',function(){var y=window.scrollY;ui.classList.toggle('stuck',y>30);cta.classList.toggle('show',y>window.innerHeight*.6)},{passive:true});
 })();
