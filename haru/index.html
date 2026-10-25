@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1f3b33">
+<meta name="description" content="はる整体院は、話を聞くところから始める完全予約制の整体院です。肩こり・腰の重さ・姿勢のお悩みに、一人ひとり丁寧に向き合います。">
+<title>はる整体院｜話を聞くところから始める整体</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbfaf6;--white:#ffffff;--sand:#f1ece2;--sage:#dfe7df;
+  --ink:#1f3b33;--deep:#16302a;--text:#33403b;--muted:#6c7a73;
+  --gold:#b8955a;--gold-l:#d9bf8c;--line:rgba(31,59,51,.14);
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
+  --en:"Cormorant Garamond",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;
+  --slow:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:var(--sans);font-size:18.5px;line-height:2;letter-spacing:.05em;overflow-x:hidden}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}ul,ol{list-style:none}
+
+/* ---------- demo notice ---------- */
+.demo-bar{position:relative;z-index:60;background:var(--deep);color:#dfe7df;font-size:14px;text-align:center;padding:7px 16px;line-height:1.7}
+.demo-bar b{color:var(--gold-l);font-weight:500}
+
+/* ---------- header ---------- */
+.header{position:sticky;top:0;z-index:50;background:rgba(251,250,246,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-in{max-width:1280px;margin:0 auto;padding:0 32px;height:84px;display:flex;align-items:center;gap:36px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{width:44px;height:44px;border-radius:50%;background:var(--ink);display:grid;place-items:center;color:var(--gold-l);font-family:var(--serif);font-size:21px;font-weight:600}
+.brand strong{display:block;font-family:var(--serif);font-size:25px;color:var(--ink);letter-spacing:.12em;line-height:1.2}
+.brand small{display:block;font-family:var(--en);font-size:14px;letter-spacing:.3em;color:var(--gold);line-height:1.2}
+.nav{display:flex;gap:30px;margin-left:auto;font-size:16.5px;font-weight:500;color:var(--ink)}
+.nav a{position:relative;padding:6px 0}
+.nav a:after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .8s var(--slow)}
+.nav a:hover:after{transform:scaleX(1);transform-origin:left}
+.head-tel{display:flex;flex-direction:column;align-items:flex-end;line-height:1.3}
+.head-tel small{font-size:13px;color:var(--muted)}
+.head-tel strong{font-family:var(--en);font-size:28px;color:var(--ink);letter-spacing:.06em;font-weight:600}
+
+/* ---------- buttons (shine) ---------- */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:66px;padding:0 28px;border-radius:999px;font-size:18px;font-weight:700;letter-spacing:.08em;transition:transform .6s var(--slow),box-shadow .6s var(--slow)}
+.btn:hover{transform:translateY(-3px)}
+.btn-main{background:var(--ink);color:#fff;box-shadow:0 14px 34px -14px rgba(22,48,42,.7)}
+.btn-main em{font-style:normal;color:var(--gold-l)}
+.btn-line{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+.btn-gold{background:var(--gold);color:#fff;box-shadow:0 14px 34px -14px rgba(120,90,40,.8)}
+.shine:before{content:"";position:absolute;top:-20%;left:-60%;width:40%;height:140%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-22deg);animation:shine 5.5s ease-in-out infinite}
+@keyframes shine{0%,62%{left:-60%}100%{left:140%}}
+.arrow{display:inline-block;width:22px;height:1.5px;background:currentColor;position:relative}
+.arrow:after{content:"";position:absolute;right:0;top:-4px;width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;min-height:calc(100vh - 118px);min-height:calc(100svh - 118px);display:flex;align-items:center;background:linear-gradient(180deg,var(--paper) 0%,var(--paper) 80%,var(--sage) 80%,var(--sage) 100%)}
+.hero-bg-word{position:absolute;left:-2vw;bottom:-3vw;font-family:var(--en);font-weight:600;font-size:21vw;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(31,59,51,.13);white-space:nowrap;letter-spacing:.02em;pointer-events:none;animation:drift 60s linear infinite alternate}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-12vw)}}
+.hero-in{position:relative;z-index:2;width:100%;max-width:1280px;margin:0 auto;padding:40px 32px 76px;display:grid;grid-template-columns:1.08fr 1fr;gap:48px;align-items:center}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.hero-tags span{border:1px solid var(--ink);color:var(--ink);border-radius:999px;padding:4px 18px;font-size:15px;font-weight:500;background:rgba(255,255,255,.6)}
+.hero h1{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:clamp(42px,4.7vw,70px);line-height:1.4;letter-spacing:.08em}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block;transform:translateY(105%);transition:transform 1.8s var(--slow)}
+.hero h1 .mark{background:linear-gradient(transparent 68%,rgba(184,149,90,.35) 68%)}
+.is-ready .hero h1 .ln>span{transform:none}
+.is-ready .hero h1 .ln:nth-child(2)>span{transition-delay:.45s}
+.is-ready .hero h1 .ln:nth-child(3)>span{transition-delay:.9s}
+.hero-lead{margin-top:22px;font-size:20px;line-height:2.1;color:var(--text);max-width:34em}
+.hero-cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.hero-note{margin-top:18px;font-size:15px;color:var(--muted)}
+
+.fade{opacity:0;transform:translateY(22px);transition:opacity 1.6s var(--slow),transform 1.6s var(--slow)}
+.is-ready .hero .fade{opacity:1;transform:none}
+.is-ready .hero .d1{transition-delay:1.4s}.is-ready .hero .d2{transition-delay:1.8s}.is-ready .hero .d3{transition-delay:2.2s}.is-ready .hero .d4{transition-delay:2.6s}
+
+/* photo stage */
+.stage{position:relative;height:min(64vh,560px);min-height:440px}
+.frame{position:absolute;right:0;top:0;width:86%;height:84%;border-radius:200px 200px 22px 22px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(22,48,42,.55);clip-path:inset(100% 0 0 0 round 200px 200px 22px 22px);transition:clip-path 2.4s var(--slow) .3s}
+.is-ready .frame{clip-path:inset(0 0 0 0 round 200px 200px 22px 22px)}
+.frame .ph{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.12);transition:opacity 2.6s ease,transform 11s linear}
+.frame .ph.on{opacity:1;transform:scale(1)}
+.frame:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(22,48,42,.35))}
+.sub-frame{position:absolute;left:0;bottom:0;width:42%;aspect-ratio:1/1.1;border-radius:18px;overflow:hidden;border:8px solid var(--paper);box-shadow:0 30px 60px -30px rgba(22,48,42,.5);opacity:0;transform:translateY(40px);transition:opacity 1.8s var(--slow) 1.6s,transform 1.8s var(--slow) 1.6s}
+.is-ready .sub-frame{opacity:1;transform:none}
+.sub-frame img{width:100%;height:100%;object-fit:cover}
+.v-copy{position:absolute;right:-6px;bottom:22%;z-index:3;writing-mode:vertical-rl;font-family:var(--serif);font-size:22px;letter-spacing:.5em;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.35);opacity:0;transition:opacity 2s ease 2.4s}
+.is-ready .v-copy{opacity:1}
+.glass{position:absolute;right:6%;bottom:2%;z-index:4;background:rgba(255,255,255,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.8);border-radius:18px;padding:18px 26px;box-shadow:0 20px 40px -20px rgba(22,48,42,.5);display:flex;gap:26px;opacity:0;transform:translateY(24px);transition:opacity 1.6s var(--slow) 2.8s,transform 1.6s var(--slow) 2.8s}
+.is-ready .glass{opacity:1;transform:none}
+.glass div{line-height:1.3}
+.glass small{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+.glass strong{font-family:var(--en);font-size:40px;font-weight:600;color:var(--ink)}
+.glass i{font-style:normal;font-size:15px;color:var(--ink);margin-left:2px}
+.dots{position:absolute;right:12px;top:12px;z-index:4;display:flex;gap:8px}
+.dots b{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.55);transition:background 1.2s}
+.dots b.on{background:#fff}
+.scroll-cue{position:absolute;left:50%;bottom:18px;z-index:3;transform:translateX(-50%);font-family:var(--en);letter-spacing:.3em;font-size:14px;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-cue:after{content:"";width:1px;height:46px;background:linear-gradient(var(--ink),transparent);animation:cue 3.4s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- common section ---------- */
+section{position:relative}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.pad{padding:130px 0}
+.ttl{text-align:center;margin-bottom:64px}
+.ttl .en{display:block;font-family:var(--en);font-style:italic;font-size:22px;letter-spacing:.2em;color:var(--gold);margin-bottom:10px}
+.ttl h2{font-family:var(--serif);font-weight:600;font-size:clamp(32px,3.6vw,46px);line-height:1.6;color:var(--ink);letter-spacing:.08em}
+.ttl p{margin-top:20px;font-size:19px;color:var(--text)}
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.6s var(--slow),transform 1.6s var(--slow)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.3s}.rv.d2{transition-delay:.6s}.rv.d3{transition-delay:.9s}
+
+/* ---------- worries ---------- */
+.worries{background:var(--white)}
+.worry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.worry{background:var(--paper);border-radius:22px;overflow:hidden;border:1px solid var(--line)}
+.worry .img{aspect-ratio:4/3;overflow:hidden}
+.worry img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--slow)}
+.worry:hover img{transform:scale(1.06)}
+.worry p{padding:20px 20px 24px;font-size:19px;font-weight:500;color:var(--ink);line-height:1.7}
+.worry p:before{content:"✓";display:grid;margin-bottom:10px;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-size:14px;}
+.worry-foot{margin-top:70px;text-align:center;font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);line-height:1.9;color:var(--ink)}
+.worry-foot b{font-weight:600;background:linear-gradient(transparent 66%,rgba(184,149,90,.32) 66%)}
+
+/* ---------- concept ---------- */
+.concept{background:var(--paper);overflow:hidden}
+.concept-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.concept-img{position:relative}
+.concept-img .main{border-radius:22px;overflow:hidden;aspect-ratio:4/3.2}
+.concept-img .main img{width:100%;height:100%;object-fit:cover}
+.concept-img:before{content:"";position:absolute;left:-40px;top:-40px;width:60%;height:70%;background:var(--sage);border-radius:22px;z-index:-1}
+.concept-txt .en{font-family:var(--en);font-style:italic;font-size:22px;letter-spacing:.2em;color:var(--gold)}
+.concept-txt h2{margin:14px 0 34px;font-family:var(--serif);font-weight:600;font-size:clamp(32px,3.4vw,44px);line-height:1.7;color:var(--ink);letter-spacing:.08em}
+.concept-txt p{font-size:19px;line-height:2.15}
+.concept-txt p+p{margin-top:22px}
+
+/* ---------- numbers ---------- */
+.numbers{background:var(--ink);color:#fff;padding:96px 0;overflow:hidden}
+.numbers:before{content:"Since 2008";position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:var(--en);font-style:italic;font-size:14vw;color:rgba(255,255,255,.04);white-space:nowrap;pointer-events:none}
+.num-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+.num-grid>div{padding:10px 20px}
+.num-grid>div+div{border-left:1px solid rgba(255,255,255,.16)}
+.num-grid small{display:block;font-size:16px;color:#cfdad3;letter-spacing:.12em;margin-bottom:6px}
+.num-grid strong{font-family:var(--en);font-weight:600;font-size:clamp(56px,6vw,84px);line-height:1.1;color:var(--gold-l)}
+.num-grid span{font-size:20px;margin-left:4px}
+.num-note{margin-top:30px;text-align:center;font-size:13.5px;color:#a9bab1}
+
+/* ---------- reasons ---------- */
+.reasons{background:var(--white)}
+.reason{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:center}
+.reason+.reason{margin-top:110px}
+.reason:nth-child(even) .r-img{order:2}
+.r-img{border-radius:22px;overflow:hidden;aspect-ratio:16/10.5;box-shadow:0 34px 60px -40px rgba(22,48,42,.6)}
+.r-img img{width:100%;height:100%;object-fit:cover;transition:transform 2s var(--slow)}
+.reason:hover .r-img img{transform:scale(1.05)}
+.r-num{font-family:var(--en);font-style:italic;font-size:26px;color:var(--gold);letter-spacing:.12em}
+.r-txt h3{margin:8px 0 22px;font-family:var(--serif);font-weight:600;font-size:clamp(28px,2.8vw,36px);line-height:1.6;color:var(--ink)}
+.r-txt p{font-size:19px;line-height:2.1}
+
+/* ---------- menu ---------- */
+.menu{background:var(--sand)}
+.menu-list{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.m-card{background:#fff;border-radius:22px;padding:42px 34px 38px;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .9s var(--slow),box-shadow .9s var(--slow)}
+.m-card:hover{transform:translateY(-6px);box-shadow:0 30px 50px -34px rgba(22,48,42,.55)}
+.m-card .tag{align-self:flex-start;font-size:14px;font-weight:700;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:2px 14px;margin-bottom:18px}
+.m-card h3{font-family:var(--serif);font-weight:600;font-size:27px;color:var(--ink);line-height:1.5}
+.m-card .time{font-size:16px;color:var(--muted);margin:6px 0 18px}
+.m-card p{font-size:17.5px;line-height:1.95;flex:1}
+.m-card .price{margin-top:26px;padding-top:22px;border-top:1px dashed var(--line);display:flex;align-items:baseline;justify-content:space-between}
+.m-card .price small{font-size:15px;color:var(--muted)}
+.m-card .price strong{font-family:var(--en);font-weight:600;font-size:38px;color:var(--ink)}
+.m-card .price strong i{font-style:normal;font-family:var(--sans);font-size:16px;margin-left:2px}
+.first-offer{margin-top:56px;background:var(--ink);color:#fff;border-radius:26px;padding:50px 56px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative;overflow:hidden}
+.first-offer:after{content:"First Visit";position:absolute;right:30px;top:-10px;font-family:var(--en);font-style:italic;font-size:110px;color:rgba(255,255,255,.05)}
+.first-offer .lbl{display:inline-block;background:var(--gold);color:#fff;font-size:15px;font-weight:700;border-radius:999px;padding:3px 18px;margin-bottom:14px}
+.first-offer h3{font-family:var(--serif);font-weight:600;font-size:clamp(26px,2.6vw,34px);line-height:1.6}
+.first-offer p{margin-top:10px;font-size:17px;color:#d6e0da}
+.first-offer .price{font-family:var(--en);font-weight:600;font-size:70px;line-height:1;color:var(--gold-l)}
+.first-offer .price s{display:block;font-family:var(--sans);font-size:17px;color:#a9bab1;margin-bottom:8px;font-weight:400}
+.first-offer .price i{font-style:normal;font-family:var(--sans);font-size:20px;margin-left:4px;color:#fff}
+.first-offer .btn{margin-top:20px}
+.offer-right{text-align:center;position:relative;z-index:1}
+
+/* ---------- flow ---------- */
+.flow{background:var(--paper)}
+.flow-list{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:f}
+.flow-list li{position:relative;background:#fff;border-radius:22px;padding:40px 28px 34px;border:1px solid var(--line);counter-increment:f}
+.flow-list li:before{content:"STEP " counter(f);display:block;font-family:var(--en);font-weight:600;letter-spacing:.2em;font-size:17px;color:var(--gold);margin-bottom:10px}
+.flow-list li:not(:last-child):after{content:"";position:absolute;right:-17px;top:50%;width:10px;height:10px;border-top:2px solid var(--gold);border-right:2px solid var(--gold);transform:translateY(-50%) rotate(45deg)}
+.flow-list h3{font-family:var(--serif);font-weight:600;font-size:23px;color:var(--ink);margin-bottom:12px;line-height:1.5}
+.flow-list p{font-size:17px;line-height:1.95}
+
+/* ---------- director ---------- */
+.director{background:var(--white);overflow:hidden}
+.dir-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+.dir-img{position:relative;border-radius:200px 200px 22px 22px;overflow:hidden;aspect-ratio:3/3.4}
+.dir-img img{width:100%;height:100%;object-fit:cover;object-position:52% 30%}
+.dir-txt .en{font-family:var(--en);font-style:italic;font-size:22px;letter-spacing:.2em;color:var(--gold)}
+.dir-txt h2{margin:12px 0 30px;font-family:var(--serif);font-weight:600;font-size:clamp(30px,3.2vw,40px);line-height:1.7;color:var(--ink)}
+.dir-txt p{font-size:19px;line-height:2.1}
+.dir-txt p+p{margin-top:20px}
+.sign{margin-top:34px;display:flex;align-items:baseline;gap:18px}
+.sign small{font-size:16px;color:var(--muted)}
+.sign strong{font-family:var(--serif);font-size:30px;color:var(--ink);letter-spacing:.2em}
+.lic{margin-top:14px;font-size:15px;color:var(--muted)}
+
+/* ---------- voices ---------- */
+.voices{background:var(--sage)}
+.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.voice{background:#fff;border-radius:22px;padding:40px 34px;position:relative}
+.voice:before{content:"“";position:absolute;right:26px;top:-4px;font-family:var(--en);font-size:110px;line-height:1;color:var(--gold-l);opacity:.6}
+.voice .who{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.voice .ava{width:58px;height:58px;border-radius:50%;background:var(--sand);display:grid;place-items:center;font-family:var(--serif);font-size:22px;color:var(--ink)}
+.voice .who strong{display:block;font-size:18px;color:var(--ink);line-height:1.4}
+.voice .who small{font-size:15px;color:var(--muted)}
+.voice h3{font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ink);line-height:1.6;margin-bottom:14px}
+.voice p{font-size:17.5px;line-height:2}
+.voice-note{margin-top:28px;text-align:center;font-size:14.5px;color:var(--muted)}
+
+/* ---------- faq ---------- */
+.faq{background:var(--paper)}
+.faq-list{max-width:900px;margin:0 auto}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:18px;margin-bottom:16px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:26px 70px 26px 30px;font-size:19.5px;font-weight:700;color:var(--ink);position:relative;line-height:1.7}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:before{content:"Q";font-family:var(--en);font-size:28px;color:var(--gold);margin-right:14px;font-weight:600}
+.faq summary:after{content:"";position:absolute;right:32px;top:50%;width:12px;height:12px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translateY(-70%) rotate(45deg);transition:transform .6s var(--slow)}
+.faq details[open] summary:after{transform:translateY(-30%) rotate(-135deg)}
+.faq .ans{padding:0 30px 28px 64px;font-size:18px;line-height:2}
+
+/* ---------- access ---------- */
+.access{background:var(--white)}
+.acc-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.acc-img{border-radius:22px;overflow:hidden;aspect-ratio:4/3.6}
+.acc-img img{width:100%;height:100%;object-fit:cover}
+.info{width:100%;border-collapse:collapse;font-size:18px}
+.info th,.info td{text-align:left;padding:18px 6px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.8}
+.info th{width:7em;color:var(--ink);font-weight:700}
+.hours{width:100%;margin-top:30px;border-collapse:collapse;text-align:center;font-size:17px}
+.hours th,.hours td{border:1px solid var(--line);padding:12px 4px}
+.hours thead th{background:var(--sand);color:var(--ink);font-weight:700}
+.hours td{color:var(--ink);font-weight:700}
+.hours td.off{color:#b9a7a0;font-weight:400}
+.hours tbody th{background:var(--paper);font-weight:500;white-space:nowrap}
+.small-note{margin-top:12px;font-size:15px;color:var(--muted)}
+
+/* ---------- reserve ---------- */
+.reserve{background:linear-gradient(rgba(22,48,42,.88),rgba(22,48,42,.92)),url(../assets/room.jpg) center/cover;color:#fff;text-align:center;padding:130px 0;overflow:hidden}
+.reserve .en{font-family:var(--en);font-style:italic;font-size:22px;letter-spacing:.2em;color:var(--gold-l)}
+.reserve h2{margin:12px 0 22px;font-family:var(--serif);font-weight:600;font-size:clamp(32px,3.8vw,50px);line-height:1.6}
+.reserve p{font-size:19px;color:#dbe5df}
+.res-row{margin-top:50px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1000px;margin-left:auto;margin-right:auto}
+.res-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:22px;padding:34px 20px;display:flex;flex-direction:column;align-items:center;gap:8px;transition:background .8s var(--slow),transform .8s var(--slow)}
+.res-card:hover{background:rgba(255,255,255,.14);transform:translateY(-4px)}
+.res-card small{font-size:16px;color:#cfdad3}
+.res-card strong{font-size:23px;font-weight:700;letter-spacing:.06em}
+.res-card .tel{font-family:var(--en);font-size:36px;font-weight:600;letter-spacing:.06em;color:var(--gold-l)}
+.res-card span{font-size:14.5px;color:#a9bab1}
+
+/* ---------- footer ---------- */
+.footer{background:var(--deep);color:#a9bab1;padding:50px 0 120px;text-align:center;font-size:15px}
+.footer .brand{justify-content:center;margin-bottom:18px}
+.footer .brand strong{color:#fff}
+.footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin:16px 0 22px;font-size:16px;color:#dfe7df}
+
+/* ---------- fixed bottom (SP) ---------- */
+.fixed-cta{display:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1080px){
+  .nav{display:none}
+  .worry-grid{grid-template-columns:repeat(2,1fr)}
+  .flow-list{grid-template-columns:repeat(2,1fr)}
+  .flow-list li:nth-child(2):after{display:none}
+}
+@media (max-width:860px){
+  body{font-size:18px}
+  .header-in{height:70px;padding:0 18px}
+  .brand-mark{width:38px;height:38px;font-size:18px}
+  .brand strong{font-size:21px}.brand small{font-size:12px}
+  .head-tel small{display:none}.head-tel strong{font-size:22px}
+  .hero{min-height:auto;background:linear-gradient(180deg,var(--paper) 0%,var(--paper) 70%,var(--sage) 70%)}
+  .hero-in{grid-template-columns:1fr;gap:34px;padding:36px 18px 70px}
+  .hero-tags{margin-bottom:20px}.hero-tags span{font-size:14px;padding:3px 14px}
+  .hero h1{font-size:clamp(38px,10.5vw,50px)}
+  .hero-lead{font-size:18px;margin-top:22px}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .btn{min-height:62px;font-size:17.5px}
+  .stage{height:auto;min-height:0;aspect-ratio:1/.92;order:-1}
+  .sub-frame{width:36%;border-width:6px}
+  .worry p br{display:none}
+  .frame{width:88%;height:86%}
+  .v-copy{font-size:18px;right:-2px}
+  .glass{right:0;bottom:0;padding:12px 18px;gap:18px}
+  .glass strong{font-size:30px}
+  .scroll-cue{display:none}
+  .hero-bg-word{font-size:34vw;bottom:auto;top:8%}
+  .pad{padding:90px 0}
+  .wrap{padding:0 18px}
+  .ttl{margin-bottom:44px}.ttl p{font-size:17.5px;text-align:left}
+  .worry-grid{gap:14px}
+  .worry p{padding:14px 14px 18px;font-size:16.5px}
+  .worry p:before{width:24px;height:24px;font-size:12px;margin-bottom:6px}
+  .concept-grid,.dir-grid,.acc-grid{grid-template-columns:1fr;gap:44px}
+  .concept-img:before{left:-18px;top:-18px}
+  .concept-txt p,.r-txt p,.dir-txt p{font-size:18px}
+  .num-grid{grid-template-columns:repeat(2,1fr);row-gap:30px}
+  .num-grid>div:nth-child(3){border-left:none}
+  .reason{grid-template-columns:1fr;gap:28px}
+  .reason:nth-child(even) .r-img{order:0}
+  .reason+.reason{margin-top:70px}
+  .menu-list,.voice-grid,.res-row{grid-template-columns:1fr}
+  .first-offer{grid-template-columns:1fr;padding:38px 24px;text-align:center}
+  .first-offer .price{font-size:60px}
+  .flow-list{grid-template-columns:1fr}
+  .flow-list li:after{display:none!important}
+  .faq summary{font-size:18px;padding:22px 54px 22px 20px}
+  .faq .ans{padding:0 20px 24px 20px;font-size:17.5px}
+  .info{font-size:17px}.info th{width:5.5em}
+  .hours{font-size:15px}
+  .fixed-cta{display:grid;grid-template-columns:1fr 1.3fr;position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;box-shadow:0 -8px 24px rgba(22,48,42,.15);padding:10px;gap:10px;transform:translateY(110%);transition:transform .9s var(--slow)}
+  .fixed-cta.show{transform:none}
+  .fixed-cta a{display:flex;align-items:center;justify-content:center;min-height:58px;border-radius:14px;font-size:17px;font-weight:700}
+  .fixed-cta .t{border:1.5px solid var(--ink);color:var(--ink)}
+  .fixed-cta .r{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .rv,.fade,.sub-frame,.glass,.v-copy{opacity:1!important;transform:none!important}
+  .hero h1 .ln>span{transform:none!important}
+  .frame{clip-path:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar"><b>制作デモサイト</b>｜院名・住所・電話番号・料金・お客様の声はすべて架空のサンプルです。</div>
+
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="#top"><span class="brand-mark">は</span><span><strong>はる整体院</strong><small>HARU SEITAI</small></span></a>
+    <nav class="nav">
+      <a href="#concept">当院の考え方</a><a href="#reasons">選ばれる理由</a><a href="#menu">メニュー・料金</a><a href="#voices">お客様の声</a><a href="#access">アクセス</a>
+    </nav>
+    <a class="head-tel" href="tel:0000000000"><small>ご予約・ご相談（9:00〜20:00）</small><strong>00-0000-0000</strong></a>
+  </div>
+</header>
+
+<main id="top">
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg-word" aria-hidden="true">Balance &amp; Ease</div>
+  <div class="hero-in">
+    <div class="hero-txt">
+      <div class="hero-tags fade d1"><span>〇〇駅 徒歩3分</span><span>完全予約制</span><span>女性スタッフ在籍</span></div>
+      <h1>
+        <span class="ln"><span>その痛み、</span></span>
+        <span class="ln"><span><span class="mark">ひとりで</span></span></span>
+        <span class="ln"><span>抱えないで。</span></span>
+      </h1>
+      <p class="hero-lead fade d2">がまんが当たり前になっていた肩や腰に、<br>まずはお話を聞くところから、ゆっくり向き合います。</p>
+      <div class="hero-cta fade d3">
+        <a class="btn btn-main shine" href="#reserve">初回体験 <em>¥3,980</em> で予約する <span class="arrow"></span></a>
+        <a class="btn btn-line" href="tel:0000000000">電話で相談する</a>
+      </div>
+      <p class="hero-note fade d4">※ 当日のご予約もお電話で承ります</p>
+    </div>
+
+    <div class="stage" aria-hidden="true">
+      <div class="frame">
+        <div class="ph on" style="background-image:url(../assets/treat.jpg)"></div>
+        <div class="ph" style="background-image:url(../assets/counsel.jpg);background-position:60% center"></div>
+        <div class="ph" style="background-image:url(../assets/head.jpg)"></div>
+        <div class="dots"><b class="on"></b><b></b><b></b></div>
+      </div>
+      <p class="v-copy">からだを、ほどく。</p>
+      <div class="sub-frame"><img src="../assets/room.jpg" alt=""></div>
+      <div class="glass">
+        <div><small>施術歴</small><strong class="count" data-to="18">0</strong><i>年</i></div>
+        <div><small>延べ施術</small><strong class="count" data-to="12000" data-comma>0</strong><i>名</i></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue">SCROLL</div>
+</section>
+
+<!-- ===== WORRIES ===== -->
+<section class="worries pad">
+  <div class="wrap">
+    <div class="ttl rv"><span class="en">Your worries</span><h2>こんなお悩み、<br>ありませんか？</h2></div>
+    <div class="worry-grid">
+      <div class="worry rv"><div class="img"><img src="../assets/shoulder.jpg" alt="肩をおさえる男性"></div><p>肩がずっと重くて、<br>朝からつらい</p></div>
+      <div class="worry rv d1"><div class="img"><img src="../assets/waist2.jpg" alt="腰に手をあてる人"></div><p>腰が気になって、<br>立ち上がるのがこわい</p></div>
+      <div class="worry rv d2"><div class="img"><img src="../assets/neck.jpg" alt="首をおさえる男性"></div><p>首が回りにくく、<br>頭まで重く感じる</p></div>
+      <div class="worry rv d3"><div class="img"><img src="../assets/tired.jpg" alt="疲れた表情の男性"></div><p>マッサージに通っても<br>すぐ元に戻ってしまう</p></div>
+    </div>
+    <p class="worry-foot rv">ひとつでも当てはまったら、<br><b>一度、からだの声を聞かせてください。</b></p>
+  </div>
+</section>
+
+<!-- ===== CONCEPT ===== -->
+<section class="concept pad" id="concept">
+  <div class="wrap concept-grid">
+    <div class="concept-img rv"><div class="main"><img src="../assets/counsel.jpg" alt="カウンセリングの様子"></div></div>
+    <div class="concept-txt rv d1">
+      <span class="en">Our Concept</span>
+      <h2>施術より先に、<br>お話を聞く時間を。</h2>
+      <p>はる整体院では、はじめに30分ほど、お仕事や暮らしのこと、いつから気になっているのかを、ゆっくりうかがいます。</p>
+      <p>同じ「肩こり」でも、原因はお一人おひとり違うので、話を聞かずに押すことはしません。からだの状態をいっしょに確かめていって、納得してから施術を始めます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NUMBERS ===== -->
+<section class="numbers">
+  <div class="wrap">
+    <div class="num-grid">
+      <div class="rv"><small>施術歴</small><strong class="count" data-to="18">0</strong><span>年</span></div>
+      <div class="rv d1"><small>延べ施術人数</small><strong class="count" data-to="12000" data-comma>0</strong><span>名</span></div>
+      <div class="rv d2"><small>リピート率</small><strong class="count" data-to="93">0</strong><span>%</span></div>
+      <div class="rv d3"><small>口コミ評価</small><strong class="count" data-to="4.9" data-dec="1">0</strong><span>/5</span></div>
+    </div>
+    <p class="num-note">※ 数値はデモ用のサンプルです</p>
+  </div>
+</section>
+
+<!-- ===== REASONS ===== -->
+<section class="reasons pad" id="reasons">
+  <div class="wrap">
+    <div class="ttl rv"><span class="en">Why choose us</span><h2>はる整体院が<br>選ばれる理由</h2></div>
+
+    <div class="reason">
+      <div class="r-img rv"><img src="../assets/treat.jpg" alt="首まわりの施術"></div>
+      <div class="r-txt rv d1"><span class="r-num">Reason 01</span><h3>ボキボキしない、<br>やさしい手技</h3><p>強く押したり、急にひねったりはしません。力を抜いたまま受けられるやさしい施術なので、整体がはじめての方や、ご年配の方にも安心して受けていただけます。</p></div>
+    </div>
+
+    <div class="reason">
+      <div class="r-img rv"><img src="../assets/head.jpg" alt="頭まわりの施術"></div>
+      <div class="r-txt rv d1"><span class="r-num">Reason 02</span><h3>毎回、同じ施術者が<br>担当します</h3><p>担当がころころ変わると、毎回はじめから説明しないといけないですよね。はる整体院では、最初から最後まで同じ施術者が担当して、からだの変化をいっしょに見ていきます。</p></div>
+    </div>
+
+    <div class="reason">
+      <div class="r-img rv"><img src="../assets/room.jpg" alt="明るい施術室"></div>
+      <div class="r-txt rv d1"><span class="r-num">Reason 03</span><h3>おうちでできる<br>ケアもお伝えします</h3><p>通っている時間だけでなく、おうちでの過ごし方も大切なので、座り方や寝る前の簡単なストレッチなど、無理なく続けられることを紙に書いてお渡ししています。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MENU ===== -->
+<section class="menu pad" id="menu">
+  <div class="wrap">
+    <div class="ttl rv"><span class="en">Menu &amp; Price</span><h2>施術メニュー・料金</h2><p>すべて税込です。カウンセリング料は施術料金に含まれています。</p></div>
+    <div class="menu-list">
+      <div class="m-card rv"><span class="tag">いちばん人気</span><h3>全身ととのえ整体</h3><p class="time">60分</p><p>肩・首・腰・骨盤まで、からだ全体のバランスを見ながらととのえます。はじめての方にもおすすめです。</p><div class="price"><small>通常料金</small><strong>6,600<i>円</i></strong></div></div>
+      <div class="m-card rv d1"><span class="tag">座り仕事の方に</span><h3>肩・首すっきりコース</h3><p class="time">45分</p><p>デスクワークやスマホで固まりやすい肩・首・背中を中心に、ゆっくりゆるめていきます。</p><div class="price"><small>通常料金</small><strong>5,500<i>円</i></strong></div></div>
+      <div class="m-card rv d2"><span class="tag">産後の方にも</span><h3>骨盤ととのえコース</h3><p class="time">60分</p><p>座り方や歩き方のくせから、骨盤まわりのバランスを見直します。産後の方のご相談も多いコースです。</p><div class="price"><small>通常料金</small><strong>7,150<i>円</i></strong></div></div>
+    </div>
+
+    <div class="first-offer rv">
+      <div>
+        <span class="lbl">初めての方限定</span>
+        <h3>カウンセリング＋全身ととのえ整体<br>はじめての1回をお得に。</h3>
+        <p>お話をじっくり聞く時間をふくめて、90分たっぷりお取りしています。</p>
+      </div>
+      <div class="offer-right">
+        <p class="price"><s>通常 6,600円</s>3,980<i>円</i></p>
+        <a class="btn btn-gold shine" href="#reserve">初回体験を予約する <span class="arrow"></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section class="flow pad">
+  <div class="wrap">
+    <div class="ttl rv"><span class="en">Flow</span><h2>ご来院の流れ</h2></div>
+    <ol class="flow-list">
+      <li class="rv"><h3>ご予約</h3><p>お電話・LINE・WEBから、ご都合のよい日時をお選びください。</p></li>
+      <li class="rv d1"><h3>カウンセリング</h3><p>気になるところや暮らしのことを、30分ほどゆっくりうかがいます。</p></li>
+      <li class="rv d2"><h3>施術</h3><p>からだの状態をお伝えしながら、やさしい手技でととのえていきます。</p></li>
+      <li class="rv d3"><h3>セルフケアのご提案</h3><p>おうちでできるケアを紙に書いてお渡しします。無理なご案内はしません。</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== DIRECTOR ===== -->
+<section class="director pad">
+  <div class="wrap dir-grid">
+    <div class="dir-img rv"><img src="../assets/staff.jpg" alt="院長の写真"></div>
+    <div class="dir-txt rv d1">
+      <span class="en">Message</span>
+      <h2>「年だから」と、<br>あきらめないでほしいんです。</h2>
+      <p>整体院に来てくださる方の多くが、「もう年だから仕方ない」と、長いあいだ痛みをがまんしてこられています。</p>
+      <p>でも、お話を聞いていくと、毎日のくせや過ごし方の中にヒントが見つかることが多いんですよね。いっしょに原因を探していって、また好きなことを楽しめるからだを目指していきましょう。</p>
+      <div class="sign"><small>院長</small><strong>春野 なつみ</strong></div>
+      <p class="lic">柔道整復師　／　施術歴18年</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOICES ===== -->
+<section class="voices pad" id="voices">
+  <div class="wrap">
+    <div class="ttl rv"><span class="en">Voices</span><h2>お客様の声</h2></div>
+    <div class="voice-grid">
+      <div class="voice rv"><div class="who"><span class="ava">K</span><div><strong>K.Mさま</strong><small>60代・女性</small></div></div><h3>話をちゃんと聞いてもらえたのが、はじめてでした</h3><p>どこへ行ってもすぐ施術だったので、最初にゆっくり話を聞いてくれたことに驚きました。痛くない施術で、帰りは足どりが軽かったです。</p></div>
+      <div class="voice rv d1"><div class="who"><span class="ava">T</span><div><strong>T.Sさま</strong><small>50代・男性</small></div></div><h3>デスクワークの肩の重さが楽になりました</h3><p>おうちでできるストレッチを紙でもらえるので、続けやすいです。毎回同じ先生なので、説明し直さなくていいのも助かっています。</p></div>
+      <div class="voice rv d2"><div class="who"><span class="ava">Y</span><div><strong>Y.Aさま</strong><small>40代・女性</small></div></div><h3>ボキボキしないので、こわくなかったです</h3><p>整体はこわいイメージがありましたが、やさしい手技で安心しました。女性スタッフさんもいて、子どもの話まで聞いてもらえました。</p></div>
+    </div>
+    <p class="voice-note">※ 個人の感想であり、効果には個人差があります（デモ用のサンプルです）</p>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq pad">
+  <div class="wrap">
+    <div class="ttl rv"><span class="en">Q &amp; A</span><h2>よくあるご質問</h2></div>
+    <div class="faq-list rv">
+      <details open><summary>施術は痛くないですか？</summary><p class="ans">強く押したり、ボキボキ鳴らしたりする施術はしていません。力加減はその都度おうかがいしますので、遠慮なくお伝えください。</p></details>
+      <details><summary>どんな服装で行けばいいですか？</summary><p class="ans">動きやすい服装でお越しください。お着替え（上下）も無料でご用意しています。</p></details>
+      <details><summary>どのくらいのペースで通えばいいですか？</summary><p class="ans">からだの状態やご予定によって変わります。カウンセリングでご相談しながら決めていきますので、無理に通っていただくことはありません。</p></details>
+      <details><summary>予約なしでも行けますか？</summary><p class="ans">完全予約制のため、ご予約をお願いしています。当日でも空きがあればご案内できますので、お電話ください。</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACCESS ===== -->
+<section class="access pad" id="access">
+  <div class="wrap">
+    <div class="ttl rv"><span class="en">Access</span><h2>院のご案内</h2></div>
+    <div class="acc-grid">
+      <div class="acc-img rv"><img src="../assets/table.jpg" alt="施術ベッド"></div>
+      <div class="rv d1">
+        <table class="info">
+          <tr><th>院名</th><td>はる整体院</td></tr>
+          <tr><th>住所</th><td>〒000-0000<br>〇〇県〇〇市〇〇町1-2-3 はるビル2F</td></tr>
+          <tr><th>アクセス</th><td>〇〇線「〇〇駅」東口から徒歩3分<br>近くにコインパーキングあり</td></tr>
+          <tr><th>電話</th><td>00-0000-0000</td></tr>
+        </table>
+        <table class="hours">
+          <thead><tr><th></th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th></tr></thead>
+          <tbody>
+            <tr><th>9:00〜13:00</th><td>●</td><td>●</td><td class="off">休</td><td>●</td><td>●</td><td>●</td><td>●</td></tr>
+            <tr><th>14:00〜20:00</th><td>●</td><td>●</td><td class="off">休</td><td>●</td><td>●</td><td>●</td><td class="off">—</td></tr>
+          </tbody>
+        </table>
+        <p class="small-note">定休日：水曜日・祝日　／　日曜は午前のみ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESERVE ===== -->
+<section class="reserve" id="reserve">
+  <div class="wrap">
+    <span class="en rv">Reservation</span>
+    <h2 class="rv d1">まずは一度、<br>お話を聞かせてください。</h2>
+    <p class="rv d2">初めての方は、カウンセリング＋全身ととのえ整体が 3,980円（税込）です。</p>
+    <div class="res-row">
+      <a class="res-card rv" href="tel:0000000000"><small>お電話で予約</small><span class="tel">00-0000-0000</span><span>9:00〜20:00（水曜定休）</span></a>
+      <a class="res-card rv d1" href="#reserve"><small>LINEで予約</small><strong>LINEで相談する</strong><span>24時間受付・あとからご連絡します</span></a>
+      <a class="res-card rv d2" href="#reserve"><small>WEBで予約</small><strong>空き状況を見る</strong><span>24時間受付</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <a class="brand" href="#top"><span class="brand-mark">は</span><span><strong>はる整体院</strong><small>HARU SEITAI</small></span></a>
+  <nav><a href="#concept">当院の考え方</a><a href="#reasons">選ばれる理由</a><a href="#menu">メニュー・料金</a><a href="#voices">お客様の声</a><a href="#access">アクセス</a></nav>
+  <p>© はる整体院（制作デモサイト）</p>
+</footer>
+
+<div class="fixed-cta" id="fixedCta">
+  <a class="t" href="tel:0000000000">電話する</a>
+  <a class="r shine" href="#reserve">初回 ¥3,980 で予約</a>
+</div>
+
+<script>
+(function(){
+  // first view reveal
+  window.addEventListener('load',function(){requestAnimationFrame(function(){document.body.classList.add('is-ready')})});
+  setTimeout(function(){document.body.classList.add('is-ready')},1200);
+
+  // hero photo crossfade (slow)
+  var ph=document.querySelectorAll('.frame .ph'),dots=document.querySelectorAll('.dots b'),i=0;
+  setInterval(function(){
+    ph[i].classList.remove('on');dots[i].classList.remove('on');
+    i=(i+1)%ph.length;
+    ph[i].classList.add('on');dots[i].classList.add('on');
+  },7000);
+
+  // count up (not used for prices)
+  function countUp(el){
+    if(el.dataset.done)return;el.dataset.done=1;
+    var to=parseFloat(el.dataset.to),dec=parseInt(el.dataset.dec||0,10),dur=2600,t0=null;
+    function step(t){
+      if(!t0)t0=t;var p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3),v=to*e;
+      var s=v.toFixed(dec);if(el.hasAttribute('data-comma'))s=Math.round(v).toLocaleString('ja-JP');
+      el.textContent=s;if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  // glass card counts after its reveal
+  setTimeout(function(){document.querySelectorAll('.glass .count').forEach(countUp)},3400);
+
+  // scroll reveal
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll('.count').forEach(function(c){setTimeout(function(){countUp(c)},500)});
+      io.unobserve(e.target);
+    });
+  },{threshold:.18,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+  // fixed CTA on phones
+  var cta=document.getElementById('fixedCta'),hero=document.querySelector('.hero');
+  window.addEventListener('scroll',function(){
+    cta.classList.toggle('show',window.scrollY>hero.offsetHeight*.7);
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
