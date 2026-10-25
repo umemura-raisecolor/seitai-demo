@@ -178,12 +178,43 @@ section{position:relative}
 .note{margin-top:28px;text-align:center;font-family:var(--sans);font-size:14.5px;color:var(--muted)}
 
 /* ===== flow ===== */
-.flow-list{margin-top:60px;display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
-.flow-list li{text-align:center}
-.flow-list .num{width:120px;height:120px;margin:0 auto 20px;border-radius:50%;background:var(--mist);display:grid;place-items:center;font-family:var(--en);font-style:italic;font-size:22px;color:var(--lav-d);line-height:1.2}
-.flow-list .num b{display:block;font-size:40px;font-style:normal;font-weight:500}
-.flow-list h3{font-weight:500;font-size:22px;color:var(--ink);margin-bottom:8px}
-.flow-list p{font-size:17px;line-height:2;text-align:left}
+.flow{background:linear-gradient(180deg,#fff 0%,var(--blush) 55%,#fff 100%);overflow:hidden}
+.flow-bg{position:absolute;inset:0;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(40px);opacity:.55;animation:blob 18s ease-in-out infinite alternate}
+.blob.b1{width:380px;height:380px;left:-80px;top:120px;background:#e7dcf3}
+.blob.b2{width:320px;height:320px;right:-60px;top:40px;background:#f5e3ea;animation-duration:22s}
+.blob.b3{width:300px;height:300px;left:42%;bottom:-120px;background:#efe6d6;animation-duration:26s}
+@keyframes blob{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,-30px) scale(1.12)}}
+.flow-word{position:absolute;right:-1vw;top:60px;font-family:var(--en);font-style:italic;font-size:17vw;line-height:1;color:rgba(143,116,176,.07);animation:fw 40s linear infinite alternate}
+@keyframes fw{from{transform:translateX(0)}to{transform:translateX(-8vw)}}
+.flow-lead{margin-top:14px;font-size:18.5px;line-height:2.1}
+.flow-box{position:relative;margin-top:70px}
+.flow-line{position:absolute;left:0;right:0;top:40px;width:100%;height:120px;z-index:0}
+.flow-line path{fill:none;stroke:var(--lav);stroke-width:2;stroke-linecap:round;stroke-dasharray:2 10;opacity:.55;vector-effect:non-scaling-stroke;clip-path:inset(0 100% 0 0);transition:clip-path 4.5s cubic-bezier(.45,.05,.35,1)}
+.flow-box.in .flow-line path{clip-path:inset(0 0 0 0)}
+.flow-list{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;font-variant-numeric:lining-nums}
+.flow-list li{text-align:center;opacity:0;transform:translateY(40px);transition:opacity 1.8s var(--slow),transform 1.8s var(--slow)}
+.flow-box.in li{opacity:1;transform:none}
+.flow-box.in li:nth-child(2){transition-delay:.9s}.flow-box.in li:nth-child(3){transition-delay:1.8s}.flow-box.in li:nth-child(4){transition-delay:2.7s}
+.circ{position:relative;width:200px;height:200px;margin:0 auto 26px}
+.ring{position:absolute;inset:-12px;border-radius:50%;border:1.5px dashed rgba(143,116,176,.55);animation:spin 40s linear infinite}
+.flow-list li:nth-child(even) .ring{animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.photo{position:absolute;inset:0;border-radius:50%;overflow:hidden;box-shadow:0 26px 50px -28px rgba(63,58,69,.55);background:#fff}
+.photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.25);transition:transform 3s var(--slow)}
+.flow-box.in .photo img{transform:scale(1)}
+.flow-list li:hover .photo img{transform:scale(1.08)}
+.badge{position:absolute;left:-6px;top:6px;width:78px;height:78px;border-radius:50%;background:var(--lav);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--en);font-size:13px;letter-spacing:.14em;line-height:1;box-shadow:0 12px 24px -12px rgba(111,88,145,.9);transform:scale(0) rotate(-40deg);transition:transform 1.4s cubic-bezier(.34,1.56,.64,1)}
+.badge b{font-size:32px;font-weight:500;letter-spacing:.02em;margin-top:4px}
+.flow-box.in .badge{transform:none}
+.flow-box.in li:nth-child(1) .badge{transition-delay:.9s}.flow-box.in li:nth-child(2) .badge{transition-delay:1.8s}.flow-box.in li:nth-child(3) .badge{transition-delay:2.7s}.flow-box.in li:nth-child(4) .badge{transition-delay:3.6s}
+.badge:after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--lav);opacity:0;animation:pulse 3.6s ease-out infinite}
+@keyframes pulse{0%{opacity:.7;transform:scale(.9)}100%{opacity:0;transform:scale(1.35)}}
+.ftxt{background:rgba(255,255,255,.85);backdrop-filter:blur(6px);border-radius:24px;padding:26px 22px 24px;box-shadow:0 20px 40px -32px rgba(63,58,69,.5);transition:transform .9s var(--slow),box-shadow .9s var(--slow)}
+.flow-list li:hover .ftxt{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(63,58,69,.55)}
+.ftxt h3{font-weight:500;font-size:23px;color:var(--ink);margin-bottom:10px;letter-spacing:.12em}
+.ftxt p{font-size:17px;line-height:2;text-align:left}
+.chip{display:inline-block;margin-top:14px;font-family:var(--sans);font-size:14.5px;font-weight:500;color:var(--lav-d);background:var(--lav-l);border-radius:999px;padding:3px 16px}
 
 /* ===== access ===== */
 .access{background:var(--mist)}
@@ -263,8 +294,10 @@ section{position:relative}
   .menu-grid,.voice-grid{grid-template-columns:1fr}
   .first{border-radius:30px;flex-direction:column;text-align:center;padding:34px 24px}
   .dir-img{margin:0 auto;max-width:300px}
-  .flow-list{grid-template-columns:1fr 1fr;gap:34px 18px}
-  .flow-list .num{width:96px;height:96px}
+  .flow-line{display:none}
+  .flow-lead br{display:none}.flow-lead{text-align:left}
+  .flow-list{grid-template-columns:1fr;gap:56px}
+  .circ{width:170px;height:170px}
   .reserve .r1,.reserve .r2{display:none}
   .res-btns{flex-direction:column;align-items:stretch}
   .res-tel strong{display:block;margin:4px 0 0}
@@ -422,14 +455,19 @@ section{position:relative}
 
 <!-- FLOW -->
 <section class="flow pad" id="flow">
+  <div class="flow-bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="flow-word">Flow</span></div>
+  <span class="spk" style="left:9%;top:150px"></span><span class="spk" style="right:12%;top:260px;animation-delay:-2.5s"></span><span class="spk" style="left:48%;bottom:110px;animation-delay:-5s"></span>
   <div class="wrap">
-    <div class="center rv"><p class="label">Flow</p><h2 class="h2">ご来院の流れ</h2></div>
-    <ol class="flow-list">
-      <li class="rv"><div class="num">step<b>1</b></div><h3>ご予約</h3><p>LINE・お電話から、ご都合のよい日時をお知らせください。</p></li>
-      <li class="rv d1"><div class="num">step<b>2</b></div><h3>お話をうかがう</h3><p>気になるところや暮らしのことを、30分ほどゆっくりうかがいます。</p></li>
-      <li class="rv d2"><div class="num">step<b>3</b></div><h3>施術</h3><p>からだの状態をお伝えしながら、やさしい手技でととのえます。</p></li>
-      <li class="rv d3"><div class="num">step<b>4</b></div><h3>おうちでのケア</h3><p>続けやすいセルフケアを紙に書いてお渡しします。</p></li>
-    </ol>
+    <div class="center rv"><p class="label">Flow</p><h2 class="h2">ご来院の流れ</h2><p class="flow-lead">はじめての方も安心してお越しいただけるよう、<br>ご予約からおうちでのケアまで、ていねいにご案内します。</p></div>
+    <div class="flow-box" id="flowBox">
+      <svg class="flow-line" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M60 60 C 180 0, 260 120, 375 60 S 560 0, 625 60 S 820 120, 940 60"/></svg>
+      <ol class="flow-list">
+        <li><div class="circ"><span class="ring"></span><span class="photo"><img src="../assets/staff.jpg" alt="受付スタッフ"></span><span class="badge">STEP<b>01</b></span></div><div class="ftxt"><h3>ご予約</h3><p>LINE・お電話から、ご都合のよい日時をお知らせください。当日のご予約もお電話で承ります。</p><span class="chip">LINEなら24時間OK</span></div></li>
+        <li><div class="circ"><span class="ring"></span><span class="photo"><img src="../assets/counsel.jpg" alt="カウンセリング" style="object-position:30% center"></span><span class="badge">STEP<b>02</b></span></div><div class="ftxt"><h3>お話をうかがう</h3><p>気になるところや暮らしのことを、30分ほどかけて、ゆっくりうかがいます。</p><span class="chip">約30分</span></div></li>
+        <li><div class="circ"><span class="ring"></span><span class="photo"><img src="../assets/treat.jpg" alt="施術"></span><span class="badge">STEP<b>03</b></span></div><div class="ftxt"><h3>施術</h3><p>からだの状態をお伝えしながら、ボキボキしないやさしい手技でととのえます。</p><span class="chip">約40〜60分</span></div></li>
+        <li><div class="circ"><span class="ring"></span><span class="photo"><img src="../assets/room.jpg" alt="院内"></span><span class="badge">STEP<b>04</b></span></div><div class="ftxt"><h3>おうちでのケア</h3><p>続けやすいセルフケアを紙に書いてお渡しします。無理なご案内はしません。</p><span class="chip">プリントでお渡し</span></div></li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -490,7 +528,7 @@ section{position:relative}
   var ph=document.querySelectorAll('.hero .ph'),i=0;
   setInterval(function(){ph[i].classList.remove('on');i=(i+1)%ph.length;ph[i].classList.add('on')},8000);
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
-  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  document.querySelectorAll('.rv,.flow-box').forEach(function(el){io.observe(el)});
   var ui=document.getElementById('topUi'),cta=document.getElementById('fixedCta');
   window.addEventListener('scroll',function(){var y=window.scrollY;ui.classList.toggle('stuck',y>30);cta.classList.toggle('show',y>window.innerHeight*.6)},{passive:true});
 })();
